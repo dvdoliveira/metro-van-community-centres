@@ -1,0 +1,43 @@
+<h1>Listing centres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Province</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @centres.each do |centre| %>
+      <tr>
+        <td><%= centre.name %></td>
+        <td><%= centre.address %></td>
+        <td><%= centre.city %></td>
+        <td><%= centre.province %></td>
+        <td><%= centre.url %></td>
+        <td><%= centre.description %></td>
+        <td><%= centre.phone %></td>
+        <td><%= centre.email %></td>
+        <td><%= centre.latitude %></td>
+        <td><%= centre.longitude %></td>
+        <td><%= link_to 'Show', centre %></td>
+        <td><%= link_to 'Edit', edit_centre_path(centre) %></td>
+        <td><%= link_to 'Destroy', centre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Centre', new_centre_path %>

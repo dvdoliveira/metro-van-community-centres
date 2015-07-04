@@ -16,3 +16,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
+
+#map-canvas { 
+  width:66.6666%;
+  height:calc(100% - 0);
+  position:absolute;
+  right:16px;
+  top:70px;
+  bottom:0;
+  overflow:hidden;
+}
+
+.footer {
+  height: 60px;
+}

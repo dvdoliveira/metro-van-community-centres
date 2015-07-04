@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @centre.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @centre.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @centre.city %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @centre.province %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @centre.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @centre.description %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @centre.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @centre.email %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @centre.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @centre.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_centre_path(@centre) %> |
+<%= link_to 'Back', centres_path %>
