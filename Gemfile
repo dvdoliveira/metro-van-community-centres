@@ -38,3 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#CSS Framework
+gem 'bootstrap-sass'
+
+group :development do
+  gem 'pry'
+end
