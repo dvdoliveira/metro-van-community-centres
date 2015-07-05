@@ -18,7 +18,6 @@
 
 $(document).ready(function() {
   function initialize() {
-    // var theirLatLng = new google.maps.LatLng(-25.363882,131.044922);
     var downTown = new google.maps.LatLng(49.235214, -122.965123);
     var mapOptions = {
       zoom: 12,
@@ -42,7 +41,7 @@ $(document).ready(function() {
           handleNoGeolocation(true);
         });
     } else {
-      // Browser doesn't support Geolocation
+      // Browser doesn't support Geolocation or user block this feature
       handleNoGeolocation(false);
     }
     // Handle GeoLocation problems
@@ -56,6 +55,25 @@ $(document).ready(function() {
       }
       map.setCenter(options.position);
     }
+
+    // Load centres from the database and set each pin data
+    var pins = [];
+    $.get('/centres.json').done(function(data) {
+      pins = data
+      $.each(pins, function(index, item){
+        addPin(item.latitude, item.longitude, item.name);
+      });
+    });
+
+    var addPin = function(lat, long, name) {
+      var loc = new google.maps.LatLng(lat, long);
+      var newMarker = new google.maps.Marker({
+        position: loc,
+        map: map,
+        title: name
+      });
+    }
+
 
     // var contentString = '<div id="content">'+
     //     '<div id="siteNotice">'+
