@@ -12,9 +12,21 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="btn btn-default navbar-btn" id="btn-login">Login</button></li>   
-        <li><button type="button" class="btn btn-default navbar-btn" id="btn-sign-in">Sign in</button></li>
-<!--         <li><a class="btn-lg" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-plus'></span></a></li> -->
+        <% if current_user %>
+          <li id="logged-user">
+            Signed in as <%= current_user.full_name %>
+          </li> 
+          <li>
+            <button type="button" class="btn btn-default navbar-btn" id="btn-login" id="btn-login"><%= link_to "Log out", session_path("current"), method: :delete %></button>
+          </li>
+        <% else %>
+          <li>
+            <button type="button" class="btn btn-default navbar-btn" id="btn-login"><%= link_to 'Login', new_session_path %></button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-default navbar-btn" id="btn-sign-up"><%= link_to "Sign Up", new_user_path %></button>
+          </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div> <!-- Container -->

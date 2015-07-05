@@ -20,7 +20,12 @@
   margin-left: 10px;
 }
 
-#btn-sign-in {
+li, #logged-user {
+  color: grey;
+  font-weight: 400;
+}
+
+#btn-sign-up {
   background: #ff5a5f;
   color: white;
   font-weight: 200;
@@ -29,13 +34,13 @@
   border-radius: 5px;
 }
 
-#btn-sign-in:hover {
+#btn-sign-up:hover {
   border: 2px solid lightgrey;
 }
 
 #btn-login {
   background: lightgrey;
-  // color: white;
+
   border: 1px solid white;
   border-radius: 5px;
 }
