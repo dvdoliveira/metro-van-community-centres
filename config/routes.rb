@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :centres
   resources :users, only: [:new, :create, :edit, :update, :show]
+  resource :session, only: [:new, :create, :destroy]
   root to: 'centres#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
