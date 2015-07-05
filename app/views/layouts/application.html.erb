@@ -4,13 +4,56 @@
   <title>Metro Vancouver Community Centres</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.20&key=AIzaSyBkyaNI92nJvwe2eZMnrcsO4GTJDEUmal0"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>  
+<body>
+  <% if impersonating_user? %> 
+    <p><%= link_to 'Switch back to account', admin_user_stop_impersonating_path(session[:user_id]), method: :get %></p>
+  <% end %> 
+  <div class="container-fluid">
+    <!--Navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> Metro Vancouver Community Centres</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+              <li id="logged-user">
+                Signed in as <%= current_user.full_name %>
+              </li> 
+              <li>
+                <button type="button" class="btn btn-default navbar-btn" id="btn-login" id="btn-login"><%= link_to "Log out", session_path("current"), method: :delete %></button>
+              </li>
+            <% else %>
+              <li>
+                <button type="button" class="btn btn-default navbar-btn" id="btn-login"><%= link_to 'Login', new_session_path %></button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-default navbar-btn" id="btn-sign-up"><%= link_to "Sign Up", new_user_path %></button>
+              </li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div> <!-- Container -->
+    </nav> <!-- / Navbar -->
+  </div>
+  
+  <!-- Show Error Messages -->
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value) %>
+  <% end %>
+
   <div class="container-fluid">
     <%= yield %>
   </div>   
-
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.20&key=AIzaSyBkyaNI92nJvwe2eZMnrcsO4GTJDEUmal0"></script>
 </body>
 </html>
