@@ -45,22 +45,15 @@ $(document).ready(function() {
       // Browser doesn't support Geolocation
       handleNoGeolocation(false);
     }
-
+    // Handle GeoLocation problems
     function handleNoGeolocation(errorFlag) {
       if (errorFlag) {
-        var content = 'Error: The Geolocation service failed.';
-      } else {
-        var content = 'Error: Your browser doesn\'t support geolocation.';
+        var options = {
+          map: map,
+          zoom: 12,
+          position: downTown,
+        };
       }
-
-      var options = {
-        map: map,
-        zoom: 12,
-        position: downTown,
-        content: content
-      };
-
-      var infowindow = new google.maps.InfoWindow(options);
       map.setCenter(options.position);
     }
 
