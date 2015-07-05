@@ -13,14 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require bootstrap-sprockets
+//= require bootstrap
 
 $(document).ready(function() {
   function initialize() {
     var downTown = new google.maps.LatLng(49.235214, -122.965123);
     var mapOptions = {
       zoom: 12,
+      scrollwheel: false
     }
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -37,12 +37,6 @@ $(document).ready(function() {
           icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
           animation: google.maps.Animation.DROP
         });
-
-        // var userInfoWindow = new google.maps.InfoWindow({
-        //   content: "You are here!"
-        // });
-
-        // addInfoWindowListener(userMarker, userInfoWindow);
 
         map.setCenter(pos);
       }, function() {
@@ -176,7 +170,7 @@ $(document).ready(function() {
       google.maps.event.addListener(map, 'click', function() {
         newInfoWindow.close();
       });      
-    }
+    } 
 
   }
   google.maps.event.addDomListener(window, 'load', initialize);

@@ -1,30 +1,58 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
 
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('/assets/glyphicons-halflings-regular.eot');
+    src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.navbar-brand,
+.navbar {
+  color: #ff5a5f!important; //Overwrite bootstrap default font color
+  font-weight: 600;
+  height: 70px;
+  line-height: 70px;
+  padding-top: 0;
+}
+.navbar-btn {
+  margin-left: 10px;
+}
+
+#btn-sign-in {
+  background: #ff5a5f;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 1px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#btn-sign-in:hover {
+  border: 2px solid lightgrey;
+}
+
+#btn-login {
+  background: lightgrey;
+  // color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#btn-login:hover {
+  border: 2px solid lightgrey;
+}
+
 #map-canvas { 
-  width:66.6666%;
-  height:calc(100% - 0);
-  position:absolute;
-  right:16px;
-  top:70px;
-  bottom:0;
-  overflow:hidden;
+  display: block;
+  width: 66%;
+  position: absolute;
+  top: 90px;
+  bottom: 70px;
+  left: auto;
+  right: 16px;
+  overflow: hidden;
 }
 
 // -----------------------------------
