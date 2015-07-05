@@ -61,19 +61,40 @@ $(document).ready(function() {
     $.get('/centres.json').done(function(data) {
       pins = data
       $.each(pins, function(index, item){
-        addPin(item.latitude, item.longitude, item.name);
+        addPin(item.latitude, item.longitude, item.name, item.description);
       });
     });
 
-    var addPin = function(lat, long, name) {
+    var addPin = function(lat, long, name, description) {
       var loc = new google.maps.LatLng(lat, long);
       var newMarker = new google.maps.Marker({
         position: loc,
         map: map,
-        title: name
+        title: name,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
       });
+
+      var newInfoWindow = new google.maps.InfoWindow({
+        content: "<h3>Description: " + description + "</h3>"
+      });
+      addInfoWindowListener(newMarker, newInfoWindow);
     }
 
+    var lastInfoWindow;
+    var addInfoWindowListener = function(marker, newInfoWindow) {
+      google.maps.event.addListener(marker, 'click', function() {
+        if(!!lastInfoWindow){
+          lastInfoWindow.close();
+        }
+        if(lastInfoWindow === newInfoWindow){
+          lastInfoWindow = null;
+        }
+        else {
+          newInfoWindow.open(map,this);
+          lastInfoWindow = newInfoWindow;
+        }
+      });
+    }
 
     // var contentString = '<div id="content">'+
     //     '<div id="siteNotice">'+
@@ -114,8 +135,8 @@ $(document).ready(function() {
     //     title: 'Deer Lake!'
     // });
 
-    // google.maps.event.addListener(myMarker, 'click', function() {
-    //   infowindow.open(map,myMarker);
+    // google.maps.event.addListener(newMarker, 'click', function() {
+    //   infowindow.open(map,this);
     // });
   }
 
