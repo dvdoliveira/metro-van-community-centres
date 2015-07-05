@@ -4,10 +4,13 @@
   <title>Metro Vancouver Community Centres</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkyaNI92nJvwe2eZMnrcsO4GTJDEUmal0"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= yield %>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkyaNI92nJvwe2eZMnrcsO4GTJDEUmal0"></script>
+<body>  
+  <div class="container-fluid">
+    <%= yield %>
+  </div>   
+
 </body>
 </html>

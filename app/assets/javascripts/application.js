@@ -16,7 +16,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-$function() {
+$(document).ready(function() {
   function initialize() {
     var theirLatLng = new google.maps.LatLng(-25.363882,131.044922);
     var myLatLng = new google.maps.LatLng(49.235214, -122.965123);
