@@ -1,6 +1,6 @@
-== Metro Vancouver Community Centers (Working in Progress)
+== Metro Vancouver Community Centres (Working in Progress)
 
-The idea for this project is to create a directory of all Community Centers in Metro Vancouver area, including the following cities: 
+The idea for this project is to create a directory of all Community Centres in Metro Vancouver area, including the following cities: 
 - Vancouver
 - West Vancouver
 - North Vancouver
@@ -14,15 +14,18 @@ The idea for this project is to create a directory of all Community Centers in M
 - Port Coquitlam
 
 The following features are planned: 
-* Login / Signup (Done)
-* Add Community Center (Done)
-* Implement Google Maps API
-* Show Community Center on the map (Done)
-* Show Community Center details for each marker on the Map (Done)
-* Show Community Center page details (Done)
-* Edit Community Center details (Done)
-* Add Reviews to Community Centers(TODO)
-* Redirect to Community Centers Website (TODO)
+* Login / Signup *(Done)*
+* Add Community Centre *(Done)*
+* Implement Google Maps API *(Done)*
+* Show user location on the map *(Done)*
+* Show Community Centre on the map *(Done)*
+* Group Community Centres by city *(Done)*
+* Show Community Centre details for each marker on the Map *(Done)*
+* Show Community Centre page details *(Done)*
+* Edit Community Centre details *(Done)*
+* Restrict Community Centre creation only to logged users (TODO)
+* Add Reviews to Community Centres(TODO)
+* Redirect to Community Centres Website (TODO)
 * Admin Panel (TODO)
 * Manage Users (TODO)
 * Finish layout / design (TODO)
@@ -52,3 +55,4 @@ This project was created using the following tools:
 
 The live demo of this project can be found at the following address: 
 
+https://metrovancc.herokuapp.com/

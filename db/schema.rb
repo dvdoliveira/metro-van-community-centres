@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20150705111750) do
 
-  create_table "centres", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "centres", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.string   "city"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150705111750) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
     t.string   "firstname"
