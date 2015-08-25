@@ -14,15 +14,15 @@ The idea for this project is to create a directory of all Community Centres in M
 - Port Coquitlam
 
 The following features are planned: 
-* Login / Signup *(Done)*
-* Add Community Centre *(Done)*
-* Implement Google Maps API *(Done)*
-* Show user location on the map *(Done)*
-* Show Community Centre on the map *(Done)*
-* Group Community Centres by city *(Done)*
-* Show Community Centre details for each marker on the Map *(Done)*
-* Show Community Centre page details *(Done)*
-* Edit Community Centre details *(Done)*
+* Login / Signup (*Done*)
+* Add Community Centre (*Done*)
+* Implement Google Maps API (*Done*)
+* Show user location on the map (*Done*)
+* Show Community Centre on the map (*Done*)
+* Group Community Centres by city (*Done*)
+* Show Community Centre details for each marker on the Map (*Done*)
+* Show Community Centre page details (*Done*)
+* Edit Community Centre details (*Done*)
 * Restrict Community Centre creation only to logged users (TODO)
 * Add Reviews to Community Centres(TODO)
 * Redirect to Community Centres Website (TODO)
