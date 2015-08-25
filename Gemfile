@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
+# Manage .env files for development and test environments
+gem 'dotenv-rails', :groups => [:development, :test]
+
+# This gem allows the push of ENV variables on .env files to Heroku
+gem 'dotenv-heroku'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use PostgreSQL as the database for Active Record
