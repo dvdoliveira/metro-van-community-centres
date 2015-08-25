@@ -1,28 +1,54 @@
-== README
+== Metro Vancouver Community Centers (Working in Progress)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The idea for this project is to create a directory of all Community Centers in Metro Vancouver area, including the following cities: 
+- Vancouver
+- West Vancouver
+- North Vancouver
+- Burnaby
+- Coquitlam
+- Richmond
+- New Westminster
+- Surrey
+- Delta
+- Port Moody
+- Port Coquitlam
 
-Things you may want to cover:
+The following features are planned: 
+* Login / Signup (Done)
+* Add Community Center (Done)
+* Implement Google Maps API
+* Show Community Center on the map (Done)
+* Show Community Center details for each marker on the Map (Done)
+* Show Community Center page details (Done)
+* Edit Community Center details (Done)
+* Add Reviews to Community Centers(TODO)
+* Redirect to Community Centers Website (TODO)
+* Admin Panel (TODO)
+* Manage Users (TODO)
+* Finish layout / design (TODO)
 
-* Ruby version
+== Development
 
-* System dependencies
+This project was created using the following tools:
 
-* Configuration
+- *Back-End*
+  * Ruby 2.2.2
+  * Ruby on Rails 4.2.3
+  * SQLite3 (Development)
+  * PostgreSQL (Production) 
 
-* Database creation
+- *Front-End*
+  * Javascript
+  * jQuery
+  * Bootstrap CSS
 
-* Database initialization
+- *Public* *APIs*
+  * Google Maps
 
-* How to run the test suite
+- *Hosting*
+  * Heroku
 
-* Services (job queues, cache servers, search engines, etc.)
+== Live Demo
 
-* Deployment instructions
+The live demo of this project can be found at the following address: 
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
