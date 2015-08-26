@@ -4,18 +4,18 @@
   <div class="row">
     <div class="col-xs-8" id="left">
 
-
         <% @centres.group_by_city.each do |city, centres| %>
-          <ul> <%= city %></ul>
+          <ul id="city-name-list-header"> <%= city %></ul>
             <% centres.each do |centre| %>
-              <li><%= centre.name %> - <%= centre.address %></li>
+              <li class="community-centre-list-item"><%= centre.name %> - <%= centre.address %></li>
             <% end %>
           </ul>
         <% end %>
         
       <br>
-
-      <%= link_to 'New Centre', new_centre_path %>    
+      <% if current_user %>
+        <%= link_to 'New Centre', new_centre_path %>
+      <% end %>
 
     </div>
   </div>

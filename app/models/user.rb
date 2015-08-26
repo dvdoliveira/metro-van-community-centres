@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   # has_many :reviews, dependent: :destroy
 
   validates :email,
-    presence: true
+    presence: true, 
+    uniqueness: true
 
   validates :firstname,
     presence: true

@@ -60,6 +60,12 @@ li, #logged-user {
   overflow: hidden;
 }
 
+ul, #city-name-list-header {
+    font-weight: 800;
+    padding-left: 10px;
+    font-size: 1.2em;
+}
+
 // -----------------------------------
 // Google Maps InfoWindow layout start
 

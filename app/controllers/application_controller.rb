@@ -3,18 +3,21 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper_method :current_user
+  helper_method :impersonating_user?
+
 protected
 
   def restrict_admin
     redirect_to movies_path unless current_user && current_user.admin || impersonating_user?
   end
 
-  def restrict_access
-    if !current_user
-      flash[:alert] = "You must log in."
-      redirect_to new_session_path
-    end
-  end
+  # def restrict_access
+  #   if !current_user
+  #     flash[:alert] = "You must log in."
+  #     redirect_to new_session_path
+  #   end
+  # end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -24,7 +27,10 @@ protected
     session[:admin_session]
   end
 
-  helper_method :current_user
-  helper_method :impersonating_user?
+  def authenticate_user!
+    if !current_user
+      redirect_to root_path, :alert => 'You Must Be Logged In'
+    end
+  end
 
 end

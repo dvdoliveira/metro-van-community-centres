@@ -1,5 +1,6 @@
 class CentresController < ApplicationController
   before_action :set_centre, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :update]
 
   # GET /centres
   # GET /centres.json
